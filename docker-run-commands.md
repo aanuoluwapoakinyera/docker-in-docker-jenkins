@@ -22,7 +22,7 @@ docker run --name jenkins-docker --rm --detach \
 docker build -t myjenkins-blueocean:2.492.1-1 .
 ```
 
-# Step 5: Start Jenkins with DinD container
+# Step 5: Start Jenkins with DinD container then Jenkins in browser Port 8080
 ```
 docker run --name jenkins-blueocean --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \

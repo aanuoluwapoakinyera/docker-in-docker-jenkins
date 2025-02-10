@@ -40,11 +40,11 @@ docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
 
 # Step 7: Install essential plugins after setting up Jenkins
 ```
-- Docker Pipeline (not sure if still existing)
+- SSH agent
 - GitHub Integration
 - Blue Ocean
-- Pipeline
-- Pipeline Stage View Plugin
+- Pipeline Rest API
+- Pipeline Stage View
 
 ```
 

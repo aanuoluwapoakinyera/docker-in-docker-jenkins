@@ -1,11 +1,11 @@
-# Create a network
+# Step 1: Create a network
 ```
 docker network create jenkins
 ```
-# Create your volume for Jenkins
+# Step 2: Create your volume for Jenkins
 mkdir /home/ubuntu/jenkins-data
 
-### Start DinD container
+### Step 3: Start DinD container
 
 ```
 docker run --name jenkins-docker --rm --detach \
@@ -17,12 +17,12 @@ docker run --name jenkins-docker --rm --detach \
   docker:dind --storage-driver overlay2
 ```
 
-# 3. Run Docker Build for Jenkins with DinD
+# Step 4: Run Docker Build for Jenkins with DinD
 ```
 docker build -t myjenkins-blueocean:2.492.1-1 .
 ```
 
-# 4. Start Jenkins with DinD container
+# Step 5: Start Jenkins with DinD container
 ```
 docker run --name jenkins-blueocean --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
@@ -33,7 +33,21 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
   myjenkins-blueocean:2.492.1-1
 ```
 
-# Get your Jenkins Initial Password 
+# Step 6: Get your Jenkins Initial Password 
 ```
 docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+# Step 7: Install essential plugins after setting up Jenkins
+```
+- Docker Pipeline (not sure if still existing)
+- GitHub Integration
+- Blue Ocean
+- Pipeline
+- Pipeline Stage View Plugin
+
+```
+
+# Step 8: Set Up Relevant Credentials
+```
 ```

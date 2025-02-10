@@ -17,7 +17,7 @@ docker run --name jenkins-docker --rm --detach \
   docker:dind --storage-driver overlay2
 ```
 
-# Step 4: Run Docker Build for Jenkins with DinD
+# Step 4: Run Docker Build for Jenkins Image with DinD
 ```
 docker build -t myjenkins-blueocean:2.492.1-1 .
 ```
